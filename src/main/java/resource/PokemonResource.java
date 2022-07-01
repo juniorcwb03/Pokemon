@@ -60,5 +60,14 @@ public class PokemonResource {
 	
 	}
 	
+	@POST
+	@Path("/")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void inserir(Pokemon p) throws Exception{
+		Connection con = ConexaoSingleton.getConexao();
+		ColecaoDePokemon cp = new ColecaoDePokemonEmBDR(con);
+		cp.inserir(p);
+	
+	}
 	
 }
