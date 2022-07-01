@@ -22,5 +22,13 @@ import persistence.ConexaoSingleton;
 @Produces(MediaType.APPLICATION_JSON)
 public class PokemonResource {
 	
+	@GET
+	@Path("/")
+	public List<Pokemon> todos() throws Exception{
+		Connection con = ConexaoSingleton.getConexao();
+		ColecaoDePokemon cp = new ColecaoDePokemonEmBDR(con);
+		return cp.todos();
+	
+	}	
 	
 }
