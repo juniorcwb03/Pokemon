@@ -1,0 +1,7 @@
+model\Pokemon.class
+persistence\Colecao.class
+resource\PokemonResource.class
+persistence\ColecaoDePokemonEmBDR.class
+persistence\ConexaoSingleton.class
+persistence\ColecaoDePokemon.class
+application\RestAPI.class
