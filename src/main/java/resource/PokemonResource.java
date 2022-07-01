@@ -70,4 +70,14 @@ public class PokemonResource {
 	
 	}
 	
+	@PUT
+	@Path("/")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void alterar(Pokemon p) throws Exception{
+		Connection con = ConexaoSingleton.getConexao();
+		ColecaoDePokemon cp = new ColecaoDePokemonEmBDR(con);
+		cp.alterar(p);
+	
+	}
+	
 }
