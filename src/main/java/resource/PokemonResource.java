@@ -31,4 +31,12 @@ public class PokemonResource {
 	
 	}	
 	
+	@GET
+	@Path("/{num:[0-9]+}")
+	public Pokemon porNum(@PathParam("num") int num) throws Exception{
+		Connection con = ConexaoSingleton.getConexao();
+		ColecaoDePokemon cp = new ColecaoDePokemonEmBDR(con);
+		return cp.porNum(num);
+	
+	}
 }
