@@ -80,4 +80,14 @@ public class PokemonResource {
 	
 	}
 	
+	@DELETE
+	@Path("/{num:[0-9]+}")
+	public void remover(@PathParam("num") int num) throws Exception{
+		Connection con = ConexaoSingleton.getConexao();
+		ColecaoDePokemon cp = new ColecaoDePokemonEmBDR(con);
+		Pokemon p = new Pokemon(num);
+		cp.remover(p);
+	
+	}
+	
 }
