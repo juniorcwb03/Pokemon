@@ -50,4 +50,15 @@ public class PokemonResource {
 	
 	}
 	
+		
+	@GET
+	@Path("/{tipo}")
+	public Pokemon porTipo(@PathParam("tipo") String tipo) throws Exception{
+		Connection con = ConexaoSingleton.getConexao();
+		ColecaoDePokemon cp = new ColecaoDePokemonEmBDR(con);
+		return cp.porTipo(tipo);
+	
+	}
+	
+	
 }
