@@ -42,7 +42,7 @@ public class PokemonResource {
 	
 	
 	@GET
-	@Path("/{nome}")
+	@Path("/nome/{nome}")
 	public Pokemon porNome(@PathParam("nome") String nome) throws Exception{
 		Connection con = ConexaoSingleton.getConexao();
 		ColecaoDePokemon cp = new ColecaoDePokemonEmBDR(con);
